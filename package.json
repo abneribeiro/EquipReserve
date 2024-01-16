@@ -1,4 +1,12 @@
 {
+  "description": "A simple API for a equipment reservation system",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node --watch --no-warnings src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "vercel-build": "echo hello"
+  },
   "dependencies": {
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
@@ -8,5 +16,17 @@
   },
   "devDependencies": {
     "jest": "^29.7.0"
-  }
+  },
+  "name": "equipreserve",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abneribeiro/EquipReserve.git"
+  },
+  "author": "Abneribeiro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abneribeiro/EquipReserve/issues"
+  },
+  "homepage": "https://github.com/abneribeiro/EquipReserve#readme"
 }

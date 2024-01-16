@@ -1,8 +1,8 @@
 // models/Reservation.js
 const mongoose = require('mongoose');
+const { Schema } = mongoose;
 
-const reservationSchema = new mongoose.Schema({
-  // Definir a estrutura do modelo de reserva
+const reservationSchema = new Schema({
   user: {
     type: Schema.Types.ObjectId,
     ref: 'User',
@@ -11,11 +11,6 @@ const reservationSchema = new mongoose.Schema({
   equipment: {
     type: Schema.Types.ObjectId,
     ref: 'Equipment',
-    required: true
-  },
-  owner: {
-    type: Schema.Types.ObjectId,
-    ref: 'User',  // Referência ao usuário proprietário do equipamento
     required: true
   },
   startTime: {

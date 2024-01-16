@@ -1,8 +1,8 @@
 // models/Equipment.js
 const mongoose = require('mongoose');
+const { Schema } = mongoose;
 
-const equipmentSchema = new mongoose.Schema({
-  // Definir a estrutura do modelo de equipamento
+const equipmentSchema = new Schema({
   name: {
     type: String,
     required: true
@@ -14,12 +14,7 @@ const equipmentSchema = new mongoose.Schema({
   quantity: {
     type: Number,
     required: true,
-    min: 0  // Garante que a quantidade seja não negativa
-  },
-  owner: {
-    type: Schema.Types.ObjectId,
-    ref: 'User',  // Referência ao usuário proprietário do equipamento
-    required: true
+    min: 0  // Ensure quantity is non-negative
   },
   status: {
     type: String,

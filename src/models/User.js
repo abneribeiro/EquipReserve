@@ -1,8 +1,8 @@
 // models/User.js
 const mongoose = require('mongoose');
+const { Schema } = mongoose;
 
-const userSchema = new mongoose.Schema({
-  // Definir a estrutura do modelo de usuário
+const userSchema = new Schema({
   name: {
     type: String,
     required: true
@@ -16,6 +16,11 @@ const userSchema = new mongoose.Schema({
   password: {
     type: String,
     required: true
+  },
+  role: {
+    type: String,
+    default: 'user',
+    enum: ['user', 'admin'] // Enum for user roles
   },
   createdAt: {
     type: Date,

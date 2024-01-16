@@ -1,11 +1,15 @@
 // config/db.js
 const mongoose = require('mongoose');
 
+// config/dotenv.js
+require('dotenv').config();
+
 const connectDB = async () => {
   try {
     await mongoose.connect(process.env.MONGODB_URI, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
+      maxPoolSize: 50,
+      wtimeoutMS: 2500,
+      useNewUrlParser: true
     });
     console.log('Connected to MongoDB');
   } catch (error) {

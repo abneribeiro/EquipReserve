@@ -13,6 +13,11 @@ const reservationSchema = new mongoose.Schema({
     ref: 'Equipment',
     required: true
   },
+  owner: {
+    type: Schema.Types.ObjectId,
+    ref: 'User',  // Referência ao usuário proprietário do equipamento
+    required: true
+  },
   startTime: {
     type: Date,
     required: true

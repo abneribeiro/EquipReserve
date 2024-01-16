@@ -1,7 +1,8 @@
 // server.js
 const express = require('express');
 const app = express();
-const connectDB = require('./config/db');  
+const connectDB = require('./config/db');
+const userRoutes = require('./routes/userRoutes'); 
 
 // Conectar ao banco de dados
 connectDB();
@@ -14,6 +15,7 @@ app.get('/', (req, res) => {
   res.send('Bem-vindo ao EquipReserve!');
 });
 
+app.use('/api/users', userRoutes);
 
 
 // Configuração do servidor

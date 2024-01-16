@@ -1,6 +1,10 @@
 // models/Reservation.js
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
+const moment = require("moment");
+
+const currentDate = moment();
+const formattedDate = currentDate.format("YYYY-MM-DD HH:mm:ss");
 
 const reservationSchema = new Schema({
   user: {
@@ -28,7 +32,7 @@ const reservationSchema = new Schema({
   },
   createdAt: {
     type: Date,
-    default: Date.now
+    default: formattedDate
   }
 });
 

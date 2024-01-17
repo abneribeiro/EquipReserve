@@ -1,21 +1,21 @@
-// routes/equipmentRoutes.js
+// routes/reservationRoutes.js
 const express = require('express');
 const router = express.Router();
-const EquipmentController = require('../controllers/equipmentController');
+const ReservationController = require('../controllers/reservationController');
 
-// Create new equipment
-router.post('/', (req, res) => EquipmentController(req, res, 'createEquipment'));
+// Create new reservation
+router.post('/', );
 
-// Get all equipment
-router.get('/', (req, res) => EquipmentController(req, res, 'getAllEquipment'));
+// Get all reservations
+router.get('/', );
 
-// Get equipment by ID
-router.get('/:equipmentId', (req, res) => EquipmentController(req, res, 'getEquipmentById'));
+// Get reservation by ID
+router.get('/:reservationId', );
 
-// Update equipment
-router.put('/:equipmentId', (req, res) => EquipmentController(req, res, 'updateEquipment'));
+// Update reservation
+router.put('/:reservationId', );
 
-// Delete equipment
-router.delete('/:equipmentId', (req, res) => EquipmentController(req, res, 'deleteEquipment'));
+// Delete reservation
+router.delete('/:reservationId',);
 
 module.exports = router;

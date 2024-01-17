@@ -5,6 +5,10 @@ class UserController {
   // Criar um novo usuário
   async createUser(req, res) {
     try {
+      // TODO melhorar o codigo abaixo para que ele fique mais legivel
+      // fazer a validação do body da requisição
+      // verificar se o equipamento está disponivel
+      // verificar se o usuário existe
       const { username, email, password } = req.body;
       const user = new User({ username, email, password });
       await user.save();

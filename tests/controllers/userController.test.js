@@ -24,6 +24,7 @@ describe('UserController', () => {
     const res = await request(app).get('/api/users');
     expect(res.statusCode).toEqual(200);
     expect(res.body).toEqual([]);
+    console.log(res.body);
     });
   // Add more tests for other UserController methods
 });

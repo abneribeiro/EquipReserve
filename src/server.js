@@ -3,6 +3,9 @@ const express = require('express');
 const app = express();
 const connectDB = require('./config/db');
 const userRoutes = require('./routes/userRoutes'); 
+const equipmentRoutes = require('./routes/equipmentRoutes');
+const reservationRoutes = require('./routes/reservationRoutes');
+
 
 // Conectar ao banco de dados
 connectDB();
@@ -16,10 +19,12 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api/users', userRoutes);
+app.use('/api/equipment', equipmentRoutes);
+app.use('/api/reservations', reservationRoutes);
 
 
 // Configuração do servidor
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 
 // Iniciar o servidor
 app.listen(PORT, () => {

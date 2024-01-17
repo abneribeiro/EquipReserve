@@ -79,13 +79,14 @@ class UserController {
   // Excluir um usuário
   async deleteUser(req, res) {
     try {
-      const deletedUser = await User.findByIdAndDelete(req.params.userId);
+      const userId = req.params.userId;
+      const deletedUser = await User.findByIdAndDelete(userId);
       if (!deletedUser) {
         return res.status(404).json({ message: "User not found" });
       }
-      res.status(204).end();
+      res.status(204).json({ message: "User deleted successfully"});
     } catch (error) {
-      res.status(500).json({ error: error.message });
+      res.status(500).json({ error: error.message, message: "Failed to delete user" });
     }
   }
 }

@@ -1,73 +1,77 @@
 // controllers/equipmentController.js
-const Equipment = require('../models/Equipment');
+const Equipment = require("../models/Equipment");
 
 class EquipmentController {
-  constructor(req, res) {
-    this.req = req;
-    this.res = res;
-  }
-
-  async createEquipment() {
+  async createEquipment(req, res) {
     try {
-      const newEquipment = new Equipment(this.req.body);
-      const savedEquipment = await newEquipment.save();
-      this.res.status(201).json(savedEquipment);
+      const { name, description, quantity } = new Equipment(req.body);
+      const Equipment = new Equipment({ name, description, quantity });
+      await Equipment.save();
+      res.status(201).json({ message: "Equipment registered successfully." });
     } catch (error) {
-      this.res.status(500).json({ error: error.message });
+      this.res.status(500).json({
+        error: error.message,
+        message: "Failed to register Equipment.",
+      });
     }
   }
 
-  async getAllEquipment() {
+  async getAllEquipment(req, res) {
     try {
       const equipment = await Equipment.find();
-      this.res.status(200).json(equipment);
+      res.status(200).json(equipment);
     } catch (error) {
-      this.res.status(500).json({ error: error.message });
+      res
+        .status(500)
+        .json({ error: error.message, message: "Failed to find Equipment" });
     }
   }
 
-  async getEquipmentById() {
+  async getEquipmentById(req, res) {
     try {
-      const equipment = await Equipment.findById(this.req.params.equipmentId);
+      const equipment = await Equipment.findById(req.params.equipmentId);
       if (!equipment) {
-        return this.res.status(404).json({ message: 'Equipment not found' });
+        return res.status(404).json({ message: "Equipment not found" });
       }
-      this.res.status(200).json(equipment);
+      res.status(200).json(equipment);
     } catch (error) {
-      this.res.status(500).json({ error: error.message });
+      this.res
+        .status(500)
+        .json({ error: error.message, message: "Failed to find Equipment" });
     }
   }
 
-  async updateEquipment() {
+  async updateEquipment(req, res) {
     try {
+      const equipmentId = req.params.equipmentId;
       const updatedEquipment = await Equipment.findByIdAndUpdate(
-        this.req.params.equipmentId,
-        this.req.body,
+        equipmentId,
+        req.body,
         { new: true }
       );
       if (!updatedEquipment) {
-        return this.res.status(404).json({ message: 'Equipment not found' });
+        return this.res.status(404).json({ message: "Equipment not found" });
       }
       this.res.status(200).json(updatedEquipment);
     } catch (error) {
-      this.res.status(500).json({ error: error.message });
+      this.res
+        .status(500)
+        .json({ error: error.message, message: "Failed to update Equipment" });
     }
   }
 
   async deleteEquipment() {
     try {
-      const deletedEquipment = await Equipment.findByIdAndDelete(this.req.params.equipmentId);
+      const equipmentId = req.params.equipmentId;
+      const deletedEquipment = await Equipment.findByIdAndDelete(equipmentId);
       if (!deletedEquipment) {
-        return this.res.status(404).json({ message: 'Equipment not found' });
+        return this.res.status(404).json({ message: "Equipment not found" });
       }
-      this.res.status(204).end();
+      res.status(204).json({ message: "Equipment deleted successfully"});
     } catch (error) {
-      this.res.status(500).json({ error: error.message });
+      res.status(500).json({ error: error.message, message: "Failed to delete Equipment" });
     }
   }
 }
 
-module.exports = (req, res, method) => {
-  const controller = new EquipmentController(req, res);
-  controller[method]();
-};
+module.exports = new EquipmentController();

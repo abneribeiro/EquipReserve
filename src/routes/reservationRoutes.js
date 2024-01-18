@@ -4,18 +4,18 @@ const router = express.Router();
 const ReservationController = require('../controllers/reservationController');
 
 // Create new reservation
-router.post('/', );
+router.post('/', ReservationController.createReservation);
 
 // Get all reservations
-router.get('/', );
+router.get('/', ReservationController.getAllReservations );
 
 // Get reservation by ID
-router.get('/:reservationId', );
+router.get('/:reservationId', ReservationController.getReservationById );
 
 // Update reservation
-router.put('/:reservationId', );
+router.put('/:reservationId', ReservationController.updateReservation );
 
 // Delete reservation
-router.delete('/:reservationId',);
+router.delete('/:reservationId', ReservationController.deleteReservation);
 
 module.exports = router;

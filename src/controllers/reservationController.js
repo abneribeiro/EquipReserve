@@ -99,4 +99,4 @@ class ReservationController {
   }
 }
 
-module.exports = ReservationController;
+module.exports = new ReservationController();

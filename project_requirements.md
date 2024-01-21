@@ -73,4 +73,4 @@
 
 20. **Social Integration:**
     - Optional: Allow users to share reservation details on social media platforms.
-    - implementar logger para verificar erros
+    - implementar logger for erros

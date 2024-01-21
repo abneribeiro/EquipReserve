@@ -6,3 +6,5 @@ async function checkUserPermission (req, res, next){
         res.status(403).json({message: 'You are not allowed to access this resource'});
     }
 }
+
+module.exports = checkUserPermission;

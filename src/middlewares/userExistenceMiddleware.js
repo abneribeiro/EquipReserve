@@ -19,3 +19,5 @@ async function checkUserExistence (req, res, next){
     }
     
 }
+
+module.exports = checkUserExistence;

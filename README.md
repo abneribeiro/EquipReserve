@@ -1,12 +1,16 @@
 [JAVASCRIPT__BADGE]: https://img.shields.io/badge/Javascript-000?style=for-the-badge&logo=javascript
 [EXPRESS__BADGE]: https://img.shields.io/badge/express-005CFE?style=for-the-badge&logo=express
 [MONGO_BADGE]: https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white
+[Jest]:https://img.shields.io/badge/-jest-%23C21325?style=for-the-badge&logo=jest&logoColor=white
+[Github]:https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white
 
 <h1 align="center" style="font-weight: bold;"> EquipReserve API 💻</h1>
 
 ![express][EXPRESS__BADGE]
 ![javascript][JAVASCRIPT__BADGE]
 ![mongo][MONGO_BADGE]
+![Jest][Jest]
+![GitHub][GitHub]
 
 <p align="center">
   <b>EquipReserve is a reservation system API that allows users to manage equipment reservations efficiently. This README provides comprehensive information on setting up, running, and using the EquipReserve API.</b>

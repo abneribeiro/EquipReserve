@@ -62,40 +62,16 @@ EquipReserve API is accessible at `http://localhost:8080` by default. You can us
 
 ### Routes
 
-#### Users
+### Users API
 
-- **Create a new user:**
+| Method | Endpoint             | Description               |
+|--------|----------------------|---------------------------|
+| **POST**   | `/api/user`            | Create a new user         |
+| **GET**    | `/api/user`            | Get all users             |
+| **GET**    | `/api/user/:userId`    | Get a user by ID          |
+| **PUT**    | `/api/user/:userId`    | Update a user             |
+| **DELETE** | `/api/user/:userId`    | Delete a user             |
 
-  ```bash
-  POST /api/user
-  ```
-
-- **Get all users:**
-
-  ```bash
-  GET /api/user
-  ```
-
-- **Get a user by ID:**
-
-  ```bash
-  GET /api/user/:userId
-  ```
-
-- **Update a user:**
-
-  ```bash
-  PUT /api/user/:userId
-  ```
-
-- **Delete a user:**
-
-  ```bash
-  DELETE /api/user/:userId
-  ```
-
-#### Equipment
-Sure, I can help you organize these API routes in a table format. Here it is:
 
 ### Equipment API
 

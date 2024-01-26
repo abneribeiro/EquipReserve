@@ -62,7 +62,7 @@ EquipReserve API is accessible at `http://localhost:8080` by default. You can us
 
 <h3 align="center" style="font-weight: bold;">Routes</h3>
 
-1. ### Users API
+1. #### Users API
 
 | Method | Endpoint             | Description               |
 |--------|----------------------|---------------------------|
@@ -73,7 +73,7 @@ EquipReserve API is accessible at `http://localhost:8080` by default. You can us
 | **DELETE** | `/api/user/:userId`    | Delete a user             |
 
 
-2. ### Equipment API
+2. #### Equipment API
 
 | Method | Endpoint                | Description                     |
 |--------|-------------------------|---------------------------------|
@@ -83,7 +83,7 @@ EquipReserve API is accessible at `http://localhost:8080` by default. You can us
 | **PUT**    | `/api/equipment/:equipmentId` | Update equipment              |
 | **DELETE** | `/api/equipment/:equipmentId` | Delete equipment              |
 
-3. ### Reservations API
+3. #### Reservations API
 
 | Method | Endpoint                   | Description                    |
 |--------|----------------------------|--------------------------------|

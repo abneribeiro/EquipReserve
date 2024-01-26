@@ -85,13 +85,17 @@ EquipReserve API is accessible at `http://localhost:8080` by default. You can us
 
 ### Reservations API
 
-| Method | Endpoint                   | Description                    |
-|--------|----------------------------|--------------------------------|
-| **POST**   | `/api/reservation`           | Create a new reservation       |
-| **GET**    | `/api/reservation`           | Get all reservations            |
-| **GET**    | `/api/reservation/:reservationId` | Get a reservation by ID      |
-| **PUT**    | `/api/reservation/:reservationId` | Update a reservation         |
-| **DELETE** | `/api/reservation/:reservationId` | Delete a reservation         |
+<div style="text-align: center">
+
+| Method      | Endpoint                            | Description                    |
+|:------------:|:------------------------------------:|:------------------------------:|
+| **POST**     | `/api/reservation`                  | Create a new reservation       |
+| **GET**      | `/api/reservation`                  | Get all reservations            |
+| **GET**      | `/api/reservation/:reservationId`   | Get a reservation by ID         |
+| **PUT**      | `/api/reservation/:reservationId`   | Update a reservation           |
+| **DELETE**   | `/api/reservation/:reservationId`   | Delete a reservation           |
+
+</div>
 
 
 ## Features

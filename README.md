@@ -99,28 +99,16 @@ EquipReserve API is accessible at `http://localhost:8080` by default. You can us
 
 
 ## Features
-
-- [x] Rotate
-- [x] Resize
-- [x] Color filter
-- [x] Audio normalization
-- [x] Remove background noises
-- [x] Add Instagram question overlay
-- [x] Position video by face
-- [ ] Cut video when not talking
-- [ ] Subtitles
-
-### Testing
-- [ X ] **User Authentication:**
-  - [ X ] Implement authentication mechanisms for users.
-  - [ X ] Use JWT or other secure token-based authentication.
+- [X] **User Authentication:**
+  - [X] Implement authentication mechanisms for users.
+  - [X] Use JWT or other secure token-based authentication.
 
 - [ ] **Role-Based Access Control:**
-  - [ X ] Introduce roles (e.g., admin, regular user).
+  - [X] Introduce roles (e.g., admin, regular user).
   - [ ] Restrict access to certain routes based on user roles.
 
 - [ ] **Reservation Status:**
-  - [ X ] Include a status field in reservations (e.g., pending, approved, rejected).
+  - [X] Include a status field in reservations (e.g., pending, approved, rejected).
   - [ ] Allow administrators to approve or reject reservations.
 
 - [ ] **Reservation History:**
@@ -174,6 +162,7 @@ EquipReserve API is accessible at `http://localhost:8080` by default. You can us
   - [ ] Include details like user actions, reservations, and system modifications.
 
 
+### Testing
 To run tests using [Jest](https://jestjs.io/), use the following command:
 
 ```bash

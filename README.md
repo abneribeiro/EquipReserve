@@ -111,6 +111,68 @@ EquipReserve API is accessible at `http://localhost:8080` by default. You can us
 - [ ] Subtitles
 
 ### Testing
+- [ X ] **User Authentication:**
+  - [ X ] Implement authentication mechanisms for users.
+  - [ X ] Use JWT or other secure token-based authentication.
+
+- [ ] **Role-Based Access Control:**
+  - [ X ] Introduce roles (e.g., admin, regular user).
+  - [ ] Restrict access to certain routes based on user roles.
+
+- [ ] **Reservation Status:**
+  - [ X ] Include a status field in reservations (e.g., pending, approved, rejected).
+  - [ ] Allow administrators to approve or reject reservations.
+
+- [ ] **Reservation History:**
+  - [ ] Maintain a history of past reservations for auditing purposes.
+  - [ ] Include details such as reservation creation and modification timestamps.
+
+- [ ] **Notification System:**
+  - [ ] Implement a notification system for users about reservation status changes.
+  - [ ] Notify users when a reservation is approved, rejected, or modified.
+
+- [ ] **User Profile:**
+  - [ ] Allow users to view and edit their profiles.
+  - [ ] Include user details such as name, email, and contact information.
+
+- [ ] **Equipment Categories:**
+  - [ ] Categorize equipment into different types or groups.
+  - [ ] Allow users to filter equipment based on categories.
+
+- [ ] **Reservation Conflict Handling:**
+  - [ ] Implement logic to handle conflicts when two users try to reserve the same equipment simultaneously.
+  - [ ] Provide clear error messages when conflicts occur.
+
+- [ ] **Reservation Reminders:**
+  - [ ] Send reminders to users about upcoming reservations.
+  - [ ] Allow users to opt-in or opt-out of reminder notifications.
+
+- [ ] **Multi-Day Reservations:**
+  - [ ] Support reservations spanning multiple days.
+  - [ ] Allow users to specify start and end dates for their reservations.
+
+- [ ] **Reservation Comments:**
+  - [ ] Enable users to add comments or notes to their reservations.
+  - [ ] Display comments for administrators during the approval process.
+
+- [ ] **Usage Reports:**
+  - [ ] Generate usage reports for equipment.
+  - [ ] Include metrics such as the number of reservations, equipment utilization, etc.
+
+- [ ] **Cancel Reservations:**
+  - [ ] Allow users to cancel their reservations.
+  - [ ] Implement logic to handle cancellations appropriately.
+
+- [ ] **Customizable Reservation Durations:**
+  - [ ] Allow administrators to set customizable reservation durations for each equipment.
+
+- [ ] **Internationalization and Localization:**
+  - [ ] Implement internationalization and localization features to support multiple languages.
+
+- [ ] **Audit Trails:**
+  - [ ] Log important events for auditing purposes.
+  - [ ] Include details like user actions, reservations, and system modifications.
+
 
 To run tests using [Jest](https://jestjs.io/), use the following command:
 

@@ -5,12 +5,15 @@ class UserController {
   // Criar um novo usuário
   async createUser(req, res) {
     try {
-      // TODO melhorar o codigo abaixo para que ele fique mais legivel
-      // fazer a validação do body da requisição
-      // verificar se o equipamento está disponivel
-      // verificar se o usuário existe
+      
       const { username, email, password } = req.body;
       const user = new User({ username, email, password });
+
+      const existingUser = await User.findOne({ email: email });
+      if (existingUser) {
+        return res.status(400).json({ message: "User already exists" });
+      }
+
       await user.save();
       res.status(201).json({ message: "User registered successfully." });
     } catch (error) {
@@ -22,6 +25,9 @@ class UserController {
   async getAllUsers(req, res) {
     try {
       const users = await User.find();
+      if (users.length === 0) {
+        res.status(404).json({ message: "No users found" });
+      }
       res.status(200).json(users);
     } catch (error) {
       res.status(500).json({ error: error.message });

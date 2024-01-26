@@ -1,8 +1,7 @@
-// controllers/userController.js
+
 const User = require("../models/User");
 
 class UserController {
-  // Criar um novo usuário
   async createUser(req, res) {
     try {
       
@@ -21,7 +20,6 @@ class UserController {
     }
   }
 
-  // Obter todos os usuários
   async getAllUsers(req, res) {
     try {
       const users = await User.find();
@@ -55,7 +53,6 @@ class UserController {
     }
   }
 
-  // Obter um usuário por ID
   async getUserById(req, res) {
     try {
       const user = await User.findById(req.params.userId);

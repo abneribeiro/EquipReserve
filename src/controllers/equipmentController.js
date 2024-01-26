@@ -4,12 +4,12 @@ const Equipment = require("../models/Equipment");
 class EquipmentController {
   async createEquipment(req, res) {
     try {
-      const { name, description, quantity } = new Equipment(req.body);
-      const Equipment = new Equipment({ name, description, quantity });
-      await Equipment.save();
+      const { name, description, quantity } = req.body;
+      const equipment = new Equipment({ name, description, quantity, owner: req.userId});
+      await equipment.save();
       res.status(201).json({ message: "Equipment registered successfully." });
     } catch (error) {
-      this.res.status(500).json({
+      res.status(500).json({
         error: error.message,
         message: "Failed to register Equipment.",
       });
@@ -35,7 +35,7 @@ class EquipmentController {
       }
       res.status(200).json(equipment);
     } catch (error) {
-      this.res
+      res
         .status(500)
         .json({ error: error.message, message: "Failed to find Equipment" });
     }
@@ -54,18 +54,16 @@ class EquipmentController {
       }
       this.res.status(200).json(updatedEquipment);
     } catch (error) {
-      this.res
-        .status(500)
-        .json({ error: error.message, message: "Failed to update Equipment" });
+      res.status(500).json({ error: error.message, message: "Failed to update Equipment" });
     }
   }
 
-  async deleteEquipment() {
+  async deleteEquipment(req, res) {
     try {
       const equipmentId = req.params.equipmentId;
       const deletedEquipment = await Equipment.findByIdAndDelete(equipmentId);
       if (!deletedEquipment) {
-        return this.res.status(404).json({ message: "Equipment not found" });
+        return res.status(404).json({ message: "Equipment not found" });
       }
       res.status(204).json({ message: "Equipment deleted successfully"});
     } catch (error) {

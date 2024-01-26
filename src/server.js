@@ -5,6 +5,8 @@ const connectDB = require('./config/db');
 const userRoutes = require('./routes/userRoutes'); 
 const equipmentRoutes = require('./routes/equipmentRoutes');
 const reservationRoutes = require('./routes/reservationRoutes');
+const authMiddleware = require('./middlewares/authMiddleware');
+
 
 
 // Conectar ao banco de dados
@@ -15,11 +17,11 @@ app.use(express.json());
 
 // Rota de boas-vindas
 app.get('/', (req, res) => {
-  res.send('Bem-vindo ao EquipReserve!');
+  res.send('Welcome to the Equipment Reservation API!');
 });
 
 app.use('/api/users', userRoutes);
-app.use('/api/equipment', equipmentRoutes);
+app.use('/api/equipment', authMiddleware, equipmentRoutes);
 app.use('/api/reservations', reservationRoutes);
 
 

@@ -5,9 +5,6 @@ const bcrypt = require("bcrypt");
 const moment = require("moment");
 const jwt = require("jsonwebtoken");
 
-const currentDate = moment();
-const formattedDate = currentDate.format("YYYY-MM-DD HH:mm:ss");
-
 const userSchema = new Schema({
   username: {
     type: String,
@@ -31,7 +28,7 @@ const userSchema = new Schema({
   },
   createdAt: {
     type: Date,
-    default: formattedDate // Date.now
+    default: () => moment().format("YYYY-MM-DD HH:mm:ss") // Date.now
   }
 });
 
@@ -48,7 +45,7 @@ userSchema.methods.comparePassword = async function (password) {
 };
 
 userSchema.methods.generateToken = async function () {
-  return jwt.sign({ id: this._id }, process.env.SECRET_KEY, {
+  return jwt.sign({userId: this._id }, process.env.SECRET_KEY, {
     expiresIn: 86400
   });
 }

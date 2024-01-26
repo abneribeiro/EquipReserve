@@ -3,9 +3,6 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 const moment = require("moment");
 
-const currentDate = moment();
-const formattedDate = currentDate.format("YYYY-MM-DD HH:mm:ss");
-
 const equipmentSchema = new Schema({
   name: {
     type: String,
@@ -27,8 +24,13 @@ const equipmentSchema = new Schema({
   },
   createdAt: {
     type: Date,
-    default: formattedDate // Date.now
+    default: () => moment().format("YYYY-MM-DD HH:mm:ss") // Date.now
+  },
+  owner: {
+    type: Schema.Types.ObjectId,
+    ref: 'User'
   }
+
 });
 
 const Equipment = mongoose.model('Equipment', equipmentSchema);

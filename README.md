@@ -60,9 +60,9 @@ Modify `MONGODB_URI` and `SECRET_KEY` based on your MongoDB configuration.
 
 EquipReserve API is accessible at `http://localhost:8080` by default. You can use tools like [Postman](https://www.postman.com/) or [curl](https://curl.haxx.se/) to interact with the API.
 
-### Routes
+<h3 align="center" style="font-weight: bold;">Routes</h3>
 
-### Users API
+1. ### Users API
 
 | Method | Endpoint             | Description               |
 |--------|----------------------|---------------------------|
@@ -73,7 +73,7 @@ EquipReserve API is accessible at `http://localhost:8080` by default. You can us
 | **DELETE** | `/api/user/:userId`    | Delete a user             |
 
 
-### Equipment API
+2. ### Equipment API
 
 | Method | Endpoint                | Description                     |
 |--------|-------------------------|---------------------------------|
@@ -83,19 +83,15 @@ EquipReserve API is accessible at `http://localhost:8080` by default. You can us
 | **PUT**    | `/api/equipment/:equipmentId` | Update equipment              |
 | **DELETE** | `/api/equipment/:equipmentId` | Delete equipment              |
 
-### Reservations API
+3. ### Reservations API
 
-<div style="text-align: center">
-
-| Method      | Endpoint                            | Description                    |
-|:------------:|:------------------------------------:|:------------------------------:|
-| **POST**     | `/api/reservation`                  | Create a new reservation       |
-| **GET**      | `/api/reservation`                  | Get all reservations            |
-| **GET**      | `/api/reservation/:reservationId`   | Get a reservation by ID         |
-| **PUT**      | `/api/reservation/:reservationId`   | Update a reservation           |
-| **DELETE**   | `/api/reservation/:reservationId`   | Delete a reservation           |
-
-</div>
+| Method | Endpoint                   | Description                    |
+|--------|----------------------------|--------------------------------|
+| **POST**   | `/api/reservation`           | Create a new reservation       |
+| **GET**    | `/api/reservation`           | Get all reservations            |
+| **GET**    | `/api/reservation/:reservationId` | Get a reservation by ID      |
+| **PUT**    | `/api/reservation/:reservationId` | Update a reservation         |
+| **DELETE** | `/api/reservation/:reservationId` | Delete a reservation         |
 
 
 ## Features

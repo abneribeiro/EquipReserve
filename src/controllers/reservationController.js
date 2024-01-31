@@ -64,16 +64,20 @@ class ReservationController {
   }
 
   // Update reservation
-   async updateReservation(req, res) {
+  async updateReservation(req, res) {
     try {
-        // verificar se o usuário tem permissão para atualizar a reserva
-        // verificar se o usuário tem permissão para atualizar a reserva de um equipamento
-        // verificar se o usuário tem permissão para atualizar a reserva de um usuário
-        // verificar se o equipamento está disponivel
-        // verificar se o usuário existe
-        // verificar se o usuário tem permissão para reservar o equipamento
-        // verificar se o usuário não tem outra reserva no mesmo horário
-        // verificar se o usuário não tem outra reserva no mesmo dia
+      // verificar se o usuário tem permissão para atualizar a reserva
+      // verificar se o usuário tem permissão para atualizar a reserva de um equipamento
+      // verificar se o usuário tem permissão para atualizar a reserva de um usuário
+      // verificar se o equipamento está disponivel
+
+      // Check if the user has permission to update the reservation
+      // Check if the user has permission to update the reservation of an equipment
+      // Check if the user has permission to update the reservation of a user
+      // Check if the equipment is available
+
+      // Implement the permission checks and availability verification here
+
       const updatedReservation = await Reservation.findByIdAndUpdate(
         req.params.reservationId,
         req.body,
